@@ -81,7 +81,7 @@ a1f321f06490        mongo:4.2.0                         "docker-entrypoint.s…"
 
 After the application starts, navigate to `http://localhost:3000` in your web browser.
 
-![page](./output.png)
+![page](./JobApps.png)
 
 Stop and remove the containers
 ```
