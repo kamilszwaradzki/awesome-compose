@@ -22,6 +22,11 @@ const JobApp = mongoose.model('JobApp', new mongoose.Schema({
         type: String,
         trim: true,
         default: 'Brak.'
+    },
+    state : {
+        type: String,
+        trim: true,
+        default: 'sent'
     }
 }));
 

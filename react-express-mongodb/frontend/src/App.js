@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./App.scss";
 import AddJobApp from "./components/AddJobApp";
-import JobAppList from "./components/JobAppList_v2";
+import JobAppList from "./components/JobAppList";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,6 +35,17 @@ export default class App extends React.Component {
       .catch((e) => console.log("Error : ", e));
   };
 
+  handleUpdateJobApp = (id, stateJobapp) => {
+    axios
+    .patch("/api/jobapps/" + id, { state: stateJobapp })
+    .then((response) => {
+      this.setState({
+        updateState: response.message
+      });
+    })
+    .catch((e) => console.log("Error : ", e));
+  };
+
   render() {
     return (
       <div className="App container">
@@ -44,7 +55,7 @@ export default class App extends React.Component {
               <h1>JobApps</h1>
               <div className="jobapp-app">
                 <AddJobApp handleAddJobApp={this.handleAddJobApp} />
-                <JobAppList jobapps={this.state.jobapps} />
+                <JobAppList jobapps={this.state.jobapps} handleUpdateJobApp={this.handleUpdateJobApp} />
               </div>
             </div>
           </div>

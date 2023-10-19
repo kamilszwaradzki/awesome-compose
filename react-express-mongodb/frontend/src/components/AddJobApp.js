@@ -41,6 +41,7 @@ export default class JobApp extends React.Component {
           <option value="Pracuj.pl" />
           <option value="Praca.pl" />
           <option value="NoFluffJobs.com" />
+          <option value="justjoin.it" />
           <option value="Linkedin" />
           <option value="TeamQuest" />
           <option value="Olx.pl" />
